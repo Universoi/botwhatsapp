@@ -1,0 +1,20 @@
+# 1. Pega uma imagem pronta que já tem o Linux e o Chrome para o WhatsApp
+FROM ghcr.io/puppeteer/puppeteer:latest
+
+# 2. Entra como superusuário para preparar a pasta
+USER root
+
+# 3. Cria a pasta onde o bot vai morar no servidor
+WORKDIR /app
+
+# 4. Copia os arquivos de configuração de pacotes
+COPY package.json yarn.lock* ./
+
+# 5. Instala as bibliotecas (whatsapp-web, mercadopago, etc)
+RUN yarn install --frozen-lockfile
+
+# 6. Copia o seu index.js para dentro do servidor
+COPY . .
+
+# 7. Diz ao servidor para ligar o bot
+CMD ["node", "index.js"]

@@ -1,0 +1,25 @@
+{
+  "name": "jariimports-bot",
+  "version": "1.0.0",
+  "description": "Bot de vendas via WhatsApp com integração Supabase e Mercado Pago",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "mercadopago",
+    "supabase"
+  ],
+  "author": "JariImports",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "dotenv": "^16.3.1",
+    "mercadopago": "^2.0.8",
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.23.0"
+  }
+}

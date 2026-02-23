@@ -17,4 +17,5 @@ RUN yarn install --frozen-lockfile
 COPY . .
 
 # 7. Diz ao servidor para ligar o bot
+
 CMD ["node", "index.js"]
